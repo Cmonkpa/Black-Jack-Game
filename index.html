@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <title>Black Jack Game</title>
+  </head>
+  <body>
+    <div class= "flex-container-game">
+          <h1>Blackjack</h1><br />
+      </div>
+          <div class ="flex-container-playBtn">
+
+
+          <button class ="startbtn">Play</button>
+          <button class="modal-buttons" id ="openModal">About the Game</button>
+        </div>
+
+    </div>
+          <div id="modal">
+
+                  <h1 id="modalHeading">Learn to Play Blackjack</h1>
+                    <p>The object of the game: Each participant attempts to beat the dealer by getting a count as close to 21 as possible, without going over 21.</p>
+                    <p> Card values: It is up to each individual player if an ace is worth 1 or 11. Face cards are 10 and any other card is its pip value.</p>
+                    <p>The game: After each player has been dealt the first player must decide whether to "stand" (not ask for another card) or "hit" (ask for another card in an attempt to get closer to a count of 21, or even hit 21 exactly). Thus, a player may stand on the two cards originally dealt him, or he may ask the dealer for additional cards, one at a time, until he either decides to stand on the total (if it is 21 or under), or goes "bust" (if it is over 21). In the latter case, the player loses and the dealer collects the bet wagered. The dealer then turns to the next player to his left and serves him in the same manner.</p>
+
+                    <p>The combination of an ace with a card other than a ten-card is known as a "soft hand," because the player can count the ace as a 1 or 11, and either draw cards or not. For example with a "soft 17" (an ace and a 6), the total is 7 or 17. While a count of 17 is a good hand, the player may wish to draw for a higher total. If the draw creates a bust hand by counting the ace as an 11, the player simply counts the ace as a 1 and continues playing by standing or "hitting" (asking the dealer for additional cards, one at a time).</p>
+
+                    <div id="modal-footer">
+                        <button class ="modal-buttons" id="close" href="#">Close</a>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+          <div class="flex-container-players">
+              <h2 id="player1">Player</h2>
+              <h2 id="dealer">Dealer</h2>
+              <h2 id ="deck">Deck</h2>
+
+          </div>
+
+
+          <div class="flex-container-cards">
+
+          <div id ="deck"></div>
+
+          </div>
+        </div>
+
+
+    </div>
+
+    <footer class = "flex-container-footer">
+      <button class ="hitbtn">Hit</button>
+      <button class ="standbtn">Stand</button>
+      <button class ="dealbtn">Deal</button>
+
+    </footer>
+
+  </body>
+</html>
