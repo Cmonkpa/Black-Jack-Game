@@ -70,13 +70,30 @@ const createPlayersUI =()=>{
   $("players").innerHTML = ("");
   for(let i =0; i< players.length; i++){
 
-    const div_player =$("<div>");
-    const div_playerid = $("<div>");
-    const div_hand = $("<div>");
-    const div_points = $("<div>");
+    const div_player =$("<div>").addClass("player");
+    const div_playerid = $("<div>").attr("id","player"+ i);
+    const div_hand = $("<div>").attr("id","hand" +i);
+    const div_points = $("<div>").attr("id", "points" + i);
 
-    $
+    div_playerid.innerHTML = players[i].ID;
+    div_player.appendChild(div_playerid);
+    div_player.appendChild(div_hand);
+    div_player.appendChild(div_points);
+    $("players").appendChild(div_player);
+
   }
+}
+
+$dealHands() =>{
+  for(let i = 0; i < 2; i++){
+    for (let x - 0; x < players.length; x++){
+        const card = deck.pop();
+        players[x].hand.push(card);
+        renderCard(card, x);
+        updatePoints();
+    }
+  }
+  updateDeck();
 }
 
 }) // end of document ready
