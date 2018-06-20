@@ -66,8 +66,17 @@ const createPlayers=(num)=> {
       players.push(player);
     }
 }
-// const createPlayersUI =()=>{
-//   const
-// }
+const createPlayersUI =()=>{
+  $("players").innerHTML = ("");
+  for(let i =0; i< players.length; i++){
+
+    const div_player =$("<div>");
+    const div_playerid = $("<div>");
+    const div_hand = $("<div>");
+    const div_points = $("<div>");
+
+    $
+  }
+}
 
 }) // end of document ready
