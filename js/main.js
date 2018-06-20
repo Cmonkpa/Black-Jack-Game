@@ -66,6 +66,7 @@ const createPlayers=(num)=> {
       players.push(player);
     }
 }
+//players and points
 const createPlayersUI =()=>{
   $("players").innerHTML = ("");
   for(let i =0; i< players.length; i++){
@@ -83,10 +84,10 @@ const createPlayersUI =()=>{
 
   }
 }
-
-$dealHands() =>{
+//dealing hands to players 2 cards each
+$dealHands=() =>{
   for(let i = 0; i < 2; i++){
-    for (let x - 0; x < players.length; x++){
+    for (let x = 0; x < players.length; x++){
         const card = deck.pop();
         players[x].hand.push(card);
         renderCard(card, x);
@@ -95,5 +96,12 @@ $dealHands() =>{
   }
   updateDeck();
 }
+
+//cards
+$renderCard=()=>{
+    const hand = $("#hand" + player);
+    $("getcardUI"(card)).appendChild(hand);
+}
+
 
 }) // end of document ready
