@@ -100,8 +100,30 @@ $dealHands=() =>{
 //cards
 $renderCard=()=>{
     const hand = $("#hand" + player);
-    $("getcardUI"(card)).appendChild(hand);
+    $(getCardUI(card)).appendChild("hand");
 }
+  $getCardUI(card) = {
+    // const el = $("<div>");
+    el.addClass("card");
+    (el.innerHTML) = (card.Suit + " " +card.Value);
+    return(el);
+  }
 
+  const currentPlayer = 0;
+  $hitMe(){
+    //get a card from the deck to the current player
+    // chexk if current player new points are over 21
+    const card = deck.pop();
+    players(currentPlayer).hand.push(card);
+    renderCard(card, currentPlayer);
+    updatePoint();
+    check();
+  }
+// check Points
+$check() =>{
+  if(players[currentPlayer].Points > 21);
+  $("status").innerHTML = ("Player:" + players[currentPlayer].ID +"LOST");
+
+}
 
 }) // end of document ready
