@@ -166,45 +166,52 @@ $(updatePoints(){
   // const currentPlayer = 0;
   $(hitMe() {
     //get a card from the deck to the current player
-    // check if current player new points are over 21
+    // chek if current player new points are over 21
     const card = deck.pop();
     players(currentPlayer).hand.push(card);
     renderCard(card, currentPlayer);
     updatePoint();
     check();
   });
+$(stay(){
+  //move to next player if
+  if(currentPlayer != players.length -1){
+    $("player" +currentPlayer).removeClass("active");
+    currentPlayer == 1;
+    $("player" + currentPlayer).addClass("active");
+  } else {
+          end();
+        }
+})
+
+
 // check Points
 $(check() {
   if(players[currentPlayer].Points > 21);
   $("status").innerHTML = ("Player:" + players[currentPlayer].ID +"LOST");
 });
-$(stay(){
-  if(currentPlayer != players.length -1) {
-    $("player" + currentPlayerr).remove("active");
-    currentPlayer += 1;
 
-  }  else {
-      end();
-  }
-});
 $(end() {
     const winner = -1;
     const score = 0;
 
     for(let i = 0; i < players.length; i ++) {
-      if (players[i].points > score && players[i].Points < 22) winner =i;
-    })
+      if (players[i].points > score && players[i].Points < 22){
+       winner =i;
+    }
     score = players[i].Points;
-}
+  }
 $("status").innerHTML = ("Winner: Player" +players[winner].ID);
+})
 
 $(check(){
     if(players[currentPlayer].Points > 21); {
       $("status").innerHTML =("Player:" + players[currentPlayer].ID + "LOST");
+    }
 
 });
 $(updateDeck(){
-    $("deckcount").innerHTML = (deck.length);{
+    $("deckcount").innerHTML = (deck.length);
     });
 
   $("window").load(function(){
@@ -213,7 +220,7 @@ $(updateDeck(){
         createPlayers(1);
       });
 
-}
+
 
 
 }) // end of document ready
