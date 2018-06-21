@@ -1,10 +1,11 @@
 // console.log("hi");
 
-const deck = [];
-const suits = ["spades", "diamonds","clubs", "hearts"];
-const cardValues=["A", "2", "3", "4" ,"5" ,"6", "7", "8", "9", "10", "Q", "K"];
 
 $(() =>{
+  const deck = [];
+  const suits = ["spades", "diamonds","clubs", "hearts"];
+  const cardValues=["A", "2", "3", "4" ,"5" ,"6", "7", "8", "9", "10", "Q", "K"];
+
   //defining about the Game button
   const $openBtn = $("#openModal");
 //Grabbing modal
@@ -30,7 +31,7 @@ $(() =>{
 $(createDeck(){
   deck = [];
   for(let i = 0; i < values.length; i++){
-    for(let x =0; x < suites.lenght; x++) {
+    for(let x = 0; x < suites.lenght; x++) {
       const weight = parseInt(values[i]);
       if(values[i] == "J"  || values[i] == "Q" || values[i] == "K")
         weight = 10;
@@ -43,19 +44,6 @@ $(createDeck(){
 
 });
 
-// using Fisher-Yeats shuffle
-$(shuffle()  {
-  const i = 0,
-        j = 0,
-        temp = null
-
-    for(i = array.length - 1; i > 0; i -= 1) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-});
 //building players
 const players = [];
 $(createPlayers(num){
@@ -66,6 +54,7 @@ $(createPlayers(num){
       players.push(player);
     }
 });
+
 //players and points
 $(createPlayersUI() {
   $("players").innerHTML = ("");
@@ -84,6 +73,34 @@ $(createPlayersUI() {
 
   }
 });
+
+
+// using Fisher-Yeats shuffle
+$(shuffle(){
+  const i = 0,
+        j = 0,
+        temp = null
+
+    for(i = array.length - 1; i > 0; i -= 1) {
+      j = Math.floor(Math.random() * (i + 1))
+      temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
+    }
+});
+
+$(start(){
+//deal 2 cards to every player
+currentPlayer = 0;
+createDeck();
+shuffle();
+createPlayers(2);
+createPlayersUI();
+dealHands();
+$("#player" + currentPlayer).addClass("active");
+})
+
+
 //dealing hands to players 2 cards each
 $(dealHands(){
   for(let i = 0; i < 2; i++){
@@ -129,11 +146,27 @@ $(renderCard(){
               return el;
           });
 
+//returns the number of points that a player has in the hand
+$(getPoints(player){
+  const points = 0;
+  for(let i = 0; i < players[player].Hand.length; i ++){
+  points =+ players[player].Hand[i].Weight;
+  }
+  players[player].Points = points;
+  return points;
+});
 
-  const currentPlayer = 0;
+$(updatePoints(){
+    for(let i = 0; i < players.length; i++){
+      getPoints(i);
+      $("points" + i).innerHTML = players[i].Points;
+    }
+})
+
+  // const currentPlayer = 0;
   $(hitMe() {
     //get a card from the deck to the current player
-    // chexk if current player new points are over 21
+    // check if current player new points are over 21
     const card = deck.pop();
     players(currentPlayer).hand.push(card);
     renderCard(card, currentPlayer);
