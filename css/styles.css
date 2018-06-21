@@ -4,7 +4,7 @@
 
 .flex-container-game{
     display: flex;
-    width: 90%;
+    width: 720px;
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;

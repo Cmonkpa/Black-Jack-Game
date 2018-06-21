@@ -123,7 +123,25 @@ $renderCard=()=>{
 $check() =>{
   if(players[currentPlayer].Points > 21);
   $("status").innerHTML = ("Player:" + players[currentPlayer].ID +"LOST");
-
 }
+$stay()=>{
+  if(currentPlayer != players.length -1) {
+    $("player" + currentPlayerr).remove("active");
+    currentPlayer += 1;
+
+  }  else {
+      end();
+  }
+}
+$end()=>{
+    const winner = -1;
+    const score = 0;
+
+    for(let i = 0; i < players.length; i ++) {
+      if (players[i].points > score && players[i].Points < 22) winner =i;
+    }
+    score = players[i].Points;
+}
+$("status").innerHTML = ("Winner: Player" + players[winner].ID);
 
 }) // end of document ready
