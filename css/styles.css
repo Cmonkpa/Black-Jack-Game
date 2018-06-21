@@ -4,7 +4,7 @@
 
 .flex-container-game{
     display: flex;
-    width: 720px;
+    width: 90%;
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
@@ -61,6 +61,20 @@
   padding-bottom: 15px;
   text-align: center;
 }
+
+.card{
+    width: 70px;
+    height: 100px;
+    padding: 10px;
+    border: solid 1px #808080;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 8pt;
+    text-align: center;
+    margin: 3px;
+}
+
 .modal-buttons {
       padding: 14px 18px;
       background-color: #25AA17;

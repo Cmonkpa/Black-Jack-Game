@@ -2,7 +2,7 @@
 
 const deck = [];
 const suits = ["spades", "diamonds","clubs", "hearts"];
-const cardValues=["11", "2", "3", "4" ,"5" ,"6", "7", "8", "9", "10", "Q", "K"];
+const cardValues=["A", "2", "3", "4" ,"5" ,"6", "7", "8", "9", "10", "Q", "K"];
 
 $(() =>{
   //defining about the Game button
@@ -27,9 +27,9 @@ $(() =>{
   $closeBtn.on("click", closeModal);
 
 //building deck
-const createDeck=()=> {
+$(createDeck(){
   deck = [];
-  for(let i = 0; i<values.length; i++){
+  for(let i = 0; i < values.length; i++){
     for(let x =0; x < suites.lenght; x++) {
       const weight = parseInt(values[i]);
       if(values[i] == "J"  || values[i] == "Q" || values[i] == "K")
@@ -41,10 +41,10 @@ const createDeck=()=> {
     }
   }
 
-}
+});
 
 // using Fisher-Yeats shuffle
-const shuffle =(array)=> {
+$(shuffle()  {
   const i = 0,
         j = 0,
         temp = null
@@ -55,19 +55,19 @@ const shuffle =(array)=> {
       array[i] = array[j]
       array[j] = temp
     }
-}
+});
 //building players
 const players = [];
-const createPlayers=(num)=> {
+$(createPlayers(num){
   players = [];
   for(let i =1; i <= num; i++){
     let hand = [];
     let player = { Name: "Player" + i, ID: i, Points: 0, Hand: hand};
       players.push(player);
     }
-}
+});
 //players and points
-const createPlayersUI =()=>{
+$(createPlayersUI() {
   $("players").innerHTML = ("");
   for(let i =0; i< players.length; i++){
 
@@ -83,9 +83,9 @@ const createPlayersUI =()=>{
     $("players").appendChild(div_player);
 
   }
-}
+});
 //dealing hands to players 2 cards each
-$dealHands=() =>{
+$(dealHands(){
   for(let i = 0; i < 2; i++){
     for (let x = 0; x < players.length; x++){
         const card = deck.pop();
@@ -95,22 +95,43 @@ $dealHands=() =>{
     }
   }
   updateDeck();
-}
+});
 
 //cards
-$renderCard=()=>{
+$(renderCard(){
     const hand = $("#hand" + player);
     $(getCardUI(card)).appendChild("hand");
-}
-  $getCardUI(card) = {
-    // const el = $("<div>");
-    el.addClass("card");
-    (el.innerHTML) = (card.Suit + " " +card.Value);
-    return(el);
-  }
+});
+
+//tried to use care images to make cards.
+  // $getCardUI(card) = {
+  //   const El = $("<div>");
+  //   $("El").addClass("card");
+  //   (el.innerHTML) = (card.Suit + " " +card.Value);
+  //   return(el);
+  // }
+
+  //try to render cards using html
+  $(getCardUI(card) {
+              const el = $("<div>");
+              var icon = '';
+              if (card.Suit == 'Hearts')
+              icon  ='♥';
+              else if (card.Suit == 'Spades')
+              icon = '♠';
+              else if (card.Suit == 'Diamonds')
+              icon = '♦';
+              else
+              icon = '♣';
+
+              el.className = 'card2';
+              el.innerHTML = card.Value + '' + icon;
+              return el;
+          });
+
 
   const currentPlayer = 0;
-  $hitMe(){
+  $(hitMe() {
     //get a card from the deck to the current player
     // chexk if current player new points are over 21
     const card = deck.pop();
@@ -118,13 +139,13 @@ $renderCard=()=>{
     renderCard(card, currentPlayer);
     updatePoint();
     check();
-  }
+  });
 // check Points
-$check() =>{
+$(check() {
   if(players[currentPlayer].Points > 21);
   $("status").innerHTML = ("Player:" + players[currentPlayer].ID +"LOST");
-}
-$stay()=>{
+});
+$(stay(){
   if(currentPlayer != players.length -1) {
     $("player" + currentPlayerr).remove("active");
     currentPlayer += 1;
@@ -132,16 +153,34 @@ $stay()=>{
   }  else {
       end();
   }
-}
-$end()=>{
+});
+$(end() {
     const winner = -1;
     const score = 0;
 
     for(let i = 0; i < players.length; i ++) {
       if (players[i].points > score && players[i].Points < 22) winner =i;
-    }
+    })
     score = players[i].Points;
 }
-$("status").innerHTML = ("Winner: Player" + players[winner].ID);
+$("status").innerHTML = ("Winner: Player" +players[winner].ID);
+
+$(check(){
+    if(players[currentPlayer].Points > 21); {
+      $("status").innerHTML =("Player:" + players[currentPlayer].ID + "LOST");
+
+});
+$(updateDeck(){
+    $("deckcount").innerHTML = (deck.length);{
+    });
+
+  $("window").load(function(){
+        createDeck();
+        shuffle();
+        createPlayers(1);
+      });
+
+}
+
 
 }) // end of document ready
