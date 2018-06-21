@@ -1,13 +1,16 @@
  * {border: 1px solid gold
 
 }
-
-.flex-container-game{
+/*
+ .flex-container-game{
     display: flex;
-    width: 90%;
     flex-wrap: wrap;
-    margin: auto;
     justify-content: center;
+    width: 720px;
+    border: solid 1px #ddd;
+    margin: 0 auto;
+    padding: 30px;
+
 }
 
 .flex-container-playBtn{
@@ -22,19 +25,39 @@
       display: flex;
       Justify-content: space-between;
       height: 800px;
+      width: 40%;
+      border: solid 2px #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-block;
+      margin:1%;
+      vertical-align: top;
+
 
 }
 .flex-container-cards{
-    display: flex;
-    justify-content: center;
+      display: flex;
+      justify-content: right;
+      width: 70px;
+      height: 100px;
+      padding: 10px;
+      border: solid 1px #808080;
+      background-color: white;
+      display: inline-block;
+      border-radius: 10px;
+      font-size: 8pt;
+      text-align: center;
+      margin: 3px;
+
 }
+
 .flex-container-footer{
     display: flex;
     Justify-content: center;
     margin: auto;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
   #modal{
   background-color: rgba(0,0,0,0.4);
@@ -94,7 +117,7 @@ h1{
   text-align: center;
 }
 
-.startbtn{
+.startBtn{
   padding: 14px 18px;
   background-color: #25AA17;
   border: none;
@@ -104,7 +127,7 @@ h1{
   font-family: "Arial";
   cursor: pointer;
 }
-.hitbtn{
+.hitBtn{
   padding: 14px 18px;
   background-color: #25AA17;
   border: none;
@@ -114,7 +137,7 @@ h1{
   font-family: "Arial";
   cursor: pointer;
 }
-.dealbtn{
+.dealBtn{
   padding: 14px 18px;
   background-color: #25AA17;
   border: none;
@@ -124,7 +147,7 @@ h1{
   font-family: "Arial";
   cursor: pointer;
 }
-.standbtn{
+.standBtn{
   padding: 14px 18px;
   background-color: #25AA17;
   border: none;
@@ -133,4 +156,55 @@ h1{
   color; white;
   font-family: "Arial";
   cursor: pointer;
+}
+
+.game{
+      width: 720px;
+      border: solid 1px #ddd;
+      margin: 0 auto;
+      padding: 30px;
+}
+
+.card{
+    width: 70px;
+    height: 100px;
+    padding: 10px;
+    border: solid 1px #808080;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 8pt;
+    text-align: center;
+    margin: 3px;
+}
+
+.players{
+    float:left;
+    width: 500px;
+}
+
+.player{
+      width: 40%;
+      border: solid 2px #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-block;
+      margin:1%;
+      vertical-align: top;
+}
+
+.player.active{
+      border: solid 2px #1caff6;
+}
+
+.points{
+text-align: center;
+font-size: 20pt;
+font-weight: bold;
+margin: 10px;
+}
+
+.deck{
+float:right;
+width: 200px;
 }

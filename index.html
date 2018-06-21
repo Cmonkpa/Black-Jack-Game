@@ -8,17 +8,28 @@
     <title>Black Jack Game</title>
   </head>
   <body>
-    <div class= "flex-container-game">
+    <div class="game">
+
+
+  <!-- <div class= "flex-container-game">
+
+  </div> -->
           <h1>Blackjack</h1><br />
       </div>
-          <div class ="flex-container-playBtn">
+          <!-- <div class ="flex-container-playBtn"> -->
 
 
-          <button class ="startbtn">Play</button>
+          <button class ="startBtn" id="startBtn">Play</button>
           <button class="modal-buttons" id ="openModal">About the Game</button>
-        </div>
 
-    </div>
+                <div id ="players" class="players">
+
+                </div>
+
+
+                <div class="clear"></div>
+        <!-- </div> -->
+
           <div id="modal">
 
                   <h1 id="modalHeading">Learn to Play Blackjack</h1>
@@ -45,28 +56,36 @@
 
 
 
-          <div class="flex-container-players">
+          <!-- <div class="flex-container-players"> -->
+            <div class = "players">
+
               <h2 id="player1">Player</h2>
               <h2 id="dealer">Dealer</h2>
-              <h2 id ="deck">Deck</h2>
+
 
           </div>
 
 
-          <div class="flex-container-cards">
+          <!-- <div class="flex-container-cards"> -->
 
-          <div id ="deck"></div>
+          <div id = "deck" class ="deck">
+                  <h2 id ="deck">Deck</h2>
+              <div class = "card" id="deckcount">52</div>
+              <div class= "status" id ="status"></div>
 
           </div>
+          <!-- </div> -->
         </div>
 
+</div>
 
-    </div>
 
-    <footer class = "flex-container-footer">
-      <button class ="hitbtn">Hit</button>
-      <button class ="standbtn">Stand</button>
-      <button class ="dealbtn">Deal</button>
+    <!-- <footer class = "flex-container-footer"> -->
+      <footer class = "footer">
+
+      <button class ="hitBtn" id= "hitBtn">Hit</button>
+      <button class ="standBtn" id ="standBtn">Stand</button>
+      <button class ="dealBtn" id = "dealBtn">Deal</button>
 
     </footer>
 
