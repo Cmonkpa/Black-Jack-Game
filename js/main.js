@@ -1,5 +1,7 @@
 // console.log("hi");
 const deck = [];
+const players = [];
+const currentPlayer = 0;
 const suits = ["spades", "diamonds","clubs", "hearts"];
 const values = ["A", "2", "3", "4" ,"5" ,"6", "7", "8", "9", "10", "Q", "K"];
 
@@ -9,11 +11,6 @@ $(() =>{
   // shuffle();
   // createPlayers(1);
 
-
-  // const players =[];
-  const currentPlayer = 0;
-
-
   //defining about the Game button
   const $openBtn = $("#openModal");
 //Grabbing modal
@@ -21,20 +18,21 @@ $(() =>{
 //defining modal close button
   const $closeBtn =$("#close");
 
-  const $startBtn = $("#startBtn");
+  const $playBtn = $("#playBtn");
   const $hitBtn =$("#hitBtn");
   const $dealBtn =$("#dealBtn");
+  const $stand = $("#standBtn");
 
 //event handler for game buttons
-  // const startBtn =()=> {
+  // function start(){
+  //   alert("this button has been clicked");
   // }
-  // const hitMe =()=> {
-  //   $hitMe();
-  //
-  // }
-  // const stay =()=> {
-  //   $stay();
-  // }
+  function hitMe(){
+    alert("click");
+  }
+  const stand =()=> {
+    $stand.on("click");
+  }
 
 //event handler to open modal
   const openModal =()=>{
@@ -52,12 +50,12 @@ $(() =>{
   $closeBtn.on("click", closeModal);
 
   // add listener for buttons
- $startBtn.on("click",start );
-  $hitMe.on("click", hitMe);
-  $stay.on("click", stay);
+ $playBtn.on("click", play );
+  $hitMeBtn.on("click", hitMe);
+  $standBtn.on("click", stand);
 
 //building deck
-  deck = [];
+
 function createDeck(){
   // deck = [];
   for(let i = 0; i < values.length; i++){
@@ -122,7 +120,7 @@ const createPlayersUI=()=> {
     }
 };
 
-const start= ()=>{
+const play = ()=>{
 //deal 2 cards to every player
 currentPlayer = 0;
 createDeck();
@@ -247,13 +245,4 @@ function updateDeck(){
     $("deckcount").innerHTML = (deck.length);
     };
 
-  // $("window").load(function(){
-  //       createDeck();
-  //       shuffle();
-  //       createPlayers(1);
-  //     });
-
-
-
-
-}) // end of document ready
+}); // end of document ready
